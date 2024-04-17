@@ -19,13 +19,14 @@ Learn docker if you want to update or try to clean completly because I always te
 
 # v1.0 (16-04-24 15:00)
 ## main repo
-This script is equivalent to **git clone https://github.com/herlesupreeth/docker_open5gs** on [docker open5gs](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6) but with pacthing some **git clone** command.
+This script is equivalent to **git clone https://github.com/herlesupreeth/docker_open5gs** on [docker open5gs](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6) but with pacthing some **git clone** command. \
+Run :
 ```bash
 wget -O - https://raw.githubusercontent.com/henintsoa98/docker_open5gs_build/main/clone.v1.0.bash | bash
 cd && cd docker_open5gs_160424
 ```
 On your system, base directory is located at **~/docker_open5gs_160424/** \
-Continue installation for building and tutorial for provisionning SIM [here (v1.0)](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6).Or view readme vith
+Continue installation for building and tutorial for provisionning SIM [here (v1.0)](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6).Or view readme with :
 ```bash
 less ~/docker_open5gs_160424/docker_open5gs/README.md
 ```
@@ -34,7 +35,7 @@ The command that you need to run is the step after :
 # Build docker images for open5gs EPC/5GC components
 git clone https://github.com/herlesupreeth/docker_open5gs
 ```
-**0r run this at one time if you are sure to have good connection**
+**0r run this at one time if you are sure to have good connection** :
 ```bash
 bash build.v1.0.bash
 ```
