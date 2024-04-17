@@ -33,7 +33,7 @@ less ~/docker_open5gs_160424/docker_open5gs/README.md
 The command that you need to run is the step after :
 ```bash
 # Build docker images for open5gs EPC/5GC components
-git clone https://github.com/herlesupreeth/docker_open5gs
+git clone https://github.com/herlesupreeth/docker_open5gs # don't run this just information
 ```
 **0r run this at one time if you are sure to have good connection** :
 ```bash
