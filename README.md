@@ -37,6 +37,7 @@ git clone https://github.com/herlesupreeth/docker_open5gs # don't run this just 
 ```
 **0r run this at one time if you are sure to have good connection** :
 ```bash
+cd docker_open5gs
 bash build.v1.0.bash
 ```
 ## list of checkout
