@@ -3,9 +3,9 @@ mkdir docker_open5gs_160424
 cd docker_open5gs_160424
 git clone https://github.com/herlesupreeth/docker_open5gs
 git clone --depth 1 https://github.com/henintsoa98/docker_open5gs_build
-cp docker_open5gs_build/build.v1.0.bash docker_open5gs_build/clone.v1.0.bash docker_open5gs
 cd docker_open5gs
 git checkout 8b2f5c9211f37fc9a0d8b1256eec845953a42bb6
+cp ../docker_open5gs_build/build.v1.0.bash ../docker_open5gs_build/clone.v1.0.bash .
 # TEMPLATE
 #sed -i "s###;s#git checkout [a-zA-Z0-9./]*#echo CLONE_SUCCESS#" /Dockerfile
 
