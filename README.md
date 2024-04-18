@@ -61,7 +61,7 @@ cd && cd docker_open5gs_160424/docker_open5gs/ && docker compose -f sa-deploy.ya
 ```bash
 cd && cd docker_open5gs_160424/docker_open5gs/ && docker compose -f sa-deploy.yaml build && docker pull mongo:6.0
 ```
-## RUNNING
+## RUNNING 4G
 **Edit .env file (MNC,MCC,DOCKER_IP)**
 ```bash
 cd && vim docker_open5gs_160424/docker_open5gs/.env
