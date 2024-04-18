@@ -19,15 +19,14 @@ Learn docker if you want to update or try to clean completly because I always te
 
 # v1.0 (16-04-24 15:00)
 ## BUILDING
-This script is equivalent to **git clone https://github.com/herlesupreeth/docker_open5gs** on [docker open5gs](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6) but with pacthing some **git clone** command. \
+Main source on [docker open5gs](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6) but pacth some **git clone** command. \
 Run :
 ```bash
 wget -O - https://raw.githubusercontent.com/henintsoa98/docker_open5gs_build/main/clone.v1.0.bash | bash
-cd && cd docker_open5gs_160424
 ```
 **IF you are sure to have good connection** :
 ```bash
-cd docker_open5gs && bash build.v1.0.bash
+cd && cd docker_open5gs_160424/docker_open5gs && bash build.v1.0.bash
 ```
 **ELSE RUN THIS LINE BY LINE, IF ERROR OCURS RUN AGAIN**
 ```bash
