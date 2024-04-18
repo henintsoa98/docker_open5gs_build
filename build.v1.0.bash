@@ -16,5 +16,5 @@ read REPLY
 if [[ "$REPLY" == "5g" || "$REPLY" == "5G" ]]; then
 	docker compose -f sa-deploy.yaml build && docker pull mongo:6.0
 else
-	docker compose -f sa-deploy.yaml build && docker pull mongo:6.0
+	docker compose -f 4g-volte-deploy.yaml build && docker pull mongo:6.0
 fi
