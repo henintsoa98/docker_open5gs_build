@@ -40,3 +40,7 @@ sed -i "s#git clone https://gitlab.eurecom.fr/oai/openairinterface5g.git#git clo
 
 #ims_base
 sed -i "s#git clone https://github.com/kamailio/kamailio#git clone --depth 1 -b herlesupreeth.1.0.ims_base https://github.com/henintsoa98/kamailio#;s#git checkout [a-zA-Z0-9./]*#echo CLONE_SUCCESS#" ims_base/Dockerfile
+
+cd ..
+tar -cJf docker_open5gs.tar.xz docker_open5gs
+cd docker_open5gs
