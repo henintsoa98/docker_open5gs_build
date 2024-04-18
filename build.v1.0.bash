@@ -1,11 +1,10 @@
-cd && cd docker_open5gs_160424/docker_open5gs
-cd base && docker build --no-cache --force-rm -t docker_open5gs .
-cd ../ims_base && docker build --no-cache --force-rm -t docker_kamailio .
-cd ../srslte && docker build --no-cache --force-rm -t docker_srslte .
-cd ../srsran && docker build --no-cache --force-rm -t docker_srsran .
-cd ../ueransim && docker build --no-cache --force-rm -t docker_ueransim .
+cd && cd docker_open5gs_160424/docker_open5gs/base && docker build --no-cache --force-rm -t docker_open5gs .
+cd && cd docker_open5gs_160424/docker_open5gs/ims_base && docker build --no-cache --force-rm -t docker_kamailio .
+cd && cd docker_open5gs_160424/docker_open5gs/srslte && docker build --no-cache --force-rm -t docker_srslte .
+cd && cd docker_open5gs_160424/docker_open5gs/srsran && docker build --no-cache --force-rm -t docker_srsran .
+cd && cd docker_open5gs_160424/docker_open5gs/ueransim && docker build --no-cache --force-rm -t docker_ueransim .
 
-cd ..
+cd && cd docker_open5gs_160424/docker_open5gs/
 set -a
 source .env
 sudo ufw disable
