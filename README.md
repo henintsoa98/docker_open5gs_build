@@ -18,29 +18,71 @@ Always use latest version at this README or use old version at your own risk \
 Learn docker if you want to update or try to clean completly because I always test this script on fresh install, not from an previous version \
 
 # v1.0 (16-04-24 15:00)
-## main repo
+## BUILDING
 This script is equivalent to **git clone https://github.com/herlesupreeth/docker_open5gs** on [docker open5gs](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6) but with pacthing some **git clone** command. \
 Run :
 ```bash
 wget -O - https://raw.githubusercontent.com/henintsoa98/docker_open5gs_build/main/clone.v1.0.bash | bash
 cd && cd docker_open5gs_160424
 ```
-On your system, base directory is located at **~/docker_open5gs_160424/** \
-Continue installation for building and tutorial for provisionning SIM [here (v1.0)](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6).Or view readme with :
+**IF you are sure to have good connection** :
 ```bash
+cd docker_open5gs && bash build.v1.0.bash
+```
+**ELSE RUN THIS LINE BY LINE, IF ERROR OCURS RUN AGAIN**
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/base && docker build --no-cache --force-rm -t docker_open5gs .
+```
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/ims_base && docker build --no-cache --force-rm -t docker_kamailio .
+```
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/srslte && docker build --no-cache --force-rm -t docker_srslte .
+```
+You can skip srsran and ueransim if build for 4g only
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/srsran && docker build --no-cache --force-rm -t docker_srsran .
+```
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/ueransim && docker build --no-cache --force-rm -t docker_ueransim .
+```
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/
+set -a
+source .env
+sudo ufw disable # don't wory if there is not ufw on your system
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo cpupower frequency-set -g performance
+```
+**4G only**
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/ && docker compose -f sa-deploy.yaml build && docker pull mongo:6.0
+```
+**5G only**
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/ && docker compose -f sa-deploy.yaml build && docker pull mongo:6.0
+```
+## RUNNING
+**Edit .env file (MNC,MCC,DOCKER_IP)**
+```bash
+cd && vim docker_open5gs_160424/docker_open5gs/.env
+```
+**TERMINAL1**
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/ && source .env && docker compose -f 4g-volte-deploy.yaml up
+```
+**TERMINAL2"
+```bash
+cd && cd docker_open5gs_160424/docker_open5gs/ && source .env && docker compose -f srsenb.yaml up -d && docker container attach srsenb
+```
+On your system, base directory is located at **~/docker_open5gs_160424/** \
+Continue installation tutorial for provisionning SIM [here (v1.0)](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6).Or view readme with :
+```bash
+glow ~/docker_open5gs_160424/docker_open5gs/README.md
+# or
 less ~/docker_open5gs_160424/docker_open5gs/README.md
 ```
-The command that you need to run is the step after :
-```bash
-# Build docker images for open5gs EPC/5GC components
-git clone https://github.com/herlesupreeth/docker_open5gs # don't run this just information
-```
-**0r run this at one time if you are sure to have good connection** :
-```bash
-cd docker_open5gs
-bash build.v1.0.bash
-```
-## list of checkout
+## list of checkout (JUST FOR INFORMATION)
 ### base
 ```bash
 git clone --recursive https://github.com/open5gs/open5gs
