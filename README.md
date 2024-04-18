@@ -67,13 +67,19 @@ cd && cd docker_open5gs_160424/docker_open5gs/ && docker compose -f sa-deploy.ya
 ```bash
 cd && vim docker_open5gs_160424/docker_open5gs/.env
 ```
+**PRE-LAUNCH**
+```bash
+sudo ufw disable # don't wory if there is not ufw on your system
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo cpupower frequency-set -g performance
+```
 **TERMINAL1**
 ```bash
-cd && cd docker_open5gs_160424/docker_open5gs/ && source .env && docker compose -f 4g-volte-deploy.yaml up
+set -a && cd && cd docker_open5gs_160424/docker_open5gs/ && source .env && docker compose -f 4g-volte-deploy.yaml up
 ```
-**TERMINAL2"
+**TERMINAL2**
 ```bash
-cd && cd docker_open5gs_160424/docker_open5gs/ && source .env && docker compose -f srsenb.yaml up -d && docker container attach srsenb
+set -a && cd && cd docker_open5gs_160424/docker_open5gs/ && source .env && docker compose -f srsenb.yaml up -d && docker container attach srsenb
 ```
 On your system, base directory is located at **~/docker_open5gs_160424/** \
 Continue installation tutorial for provisionning SIM [here (v1.0)](https://github.com/herlesupreeth/docker_open5gs/tree/8b2f5c9211f37fc9a0d8b1256eec845953a42bb6).Or view readme with :
