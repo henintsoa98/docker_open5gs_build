@@ -3,7 +3,7 @@ This script use this awesome project : [docker_open5gs](https://github.com/herle
 This patch/script is used to reducing the internet consumption of git clone commands, on the other hand, we were able to recover checkouts from current times
 ## Cause of creation of this repository
 the internet connection in Madagascar is terribly bad, high latency, very unstable, and very very expensive. \
-Any operator presents the fatal early EOF error during several operations git clone of LimeSuite, BladeRF, no-OS(BladeRF),..., then Telma🖕, Airtel 🖕, orange🖕. \
+Any operator presents the fatal early EOF error during several operations git clone of LimeSuite, BladeRF, no-OS(BladeRF),...
 this patch is used to bypass this error, by reducing the internet consumption of git clone commands.
 ## Information
 Tags info : For building docker_open5gs_build \
